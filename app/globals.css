@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body, :root {
+  height: 100%;
+  font-size: calc(100vw / 1440 * 10);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -84,6 +91,24 @@
   }
   body {
     /* @apply bg-background text-foreground; */
-    background: #FFFAF1;
+    background: #FFFFFF;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  html, body, :root {
+    font-size: calc(100vw / 1023 * 10);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  html, body, :root {
+    font-size: calc(100vw / 650 * 10);
+  }
+}
+
+@media screen and (max-width: 485px) {
+  html, body, :root {
+    font-size: calc(100vw / 485 * 10);
   }
 }

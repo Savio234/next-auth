@@ -1,10 +1,15 @@
 .wrapper {
-    padding: 3.2rem 2.4rem;
+    padding: 2.4rem 1.6rem;
+}
+.form {
+    position: relative;
+}
+.btn {
+    border-radius: 0.8rem;
 }
 
 @media screen and (max-width: 650px) {
     .wrapper {
-        padding: 2.4rem 1.6rem;
-        background-color: black;
+        padding: 1.6rem;
     }
 }
