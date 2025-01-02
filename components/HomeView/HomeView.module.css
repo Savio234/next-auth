@@ -1,0 +1,10 @@
+.wrapper {
+    padding: 3.2rem 2.4rem;
+}
+
+@media screen and (max-width: 650px) {
+    .wrapper {
+        padding: 2.4rem 1.6rem;
+        background-color: black;
+    }
+}

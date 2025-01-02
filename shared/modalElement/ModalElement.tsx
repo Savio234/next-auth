@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import styles from "./ModalElement.module.scss";
+import styles from "./ModalElement.module.css";
 
 const ModalElement = (props: any) => {
   const handleClose = () => {
