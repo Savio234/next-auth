@@ -18,14 +18,13 @@
 	position: relative;
 	width: 100%;
 	padding: 1.6rem;
-	column-gap: 1rem;
+	column-gap: 0.5rem;
 	box-sizing: border-box;
 	background-color: transparent;
 	border: 0.1rem solid #A3A3A3;
 	border-radius: 1.5rem;
 	transition: all 0.1s ease-in;
 	margin-top: 0.6rem;
-	/* // @include flex(flex-start, center, row nowrap); */
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
