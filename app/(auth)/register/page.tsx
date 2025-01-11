@@ -1,7 +1,7 @@
-
+import { SignUpForm } from "@/components/index";
 
 export default function RegisterPage() {
     return (
-        <h1>Register</h1>
+        <SignUpForm />
     )
 }

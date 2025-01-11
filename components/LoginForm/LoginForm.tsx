@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import { Button, CardWrapper, InputField } from '@/shared'
 import { useValidateLogin } from '@/hooks';
+import { FaExclamationTriangle } from 'react-icons/fa';
 
 const LoginForm = () => {
   const { register, handleSubmit, errors, isSubmitting, submitForm } = useValidateLogin()
@@ -8,7 +10,6 @@ const LoginForm = () => {
     <CardWrapper headerLabel='Welcome back' backButtonLabel={`Don't have an account`}
       backButtonHref='/register' showSocial
     >
-      {/* <h3 className='text-[1.6rem]'>Login Form</h3> */}
       <form onSubmit={handleSubmit(submitForm)} className='flex flex-col gap-4 mt-6'>
         <>
           <InputField register={register('email')} name='Email' label='Email' 
@@ -16,7 +17,10 @@ const LoginForm = () => {
             inputClass={`${errors?.email && `border border-red-500`}`}
           />
           {errors?.email && (
-            <p className='text-red-500'>{errors?.email?.message}</p>
+            <div className='flex items-center gap-2'>
+              <FaExclamationTriangle color='red' className='h-6 w-6 mb-1' />
+              <p className='text-red-500 text-[1.6rem]'>{errors?.email?.message}</p>
+            </div>
           )}
         </>
         <>
@@ -25,7 +29,10 @@ const LoginForm = () => {
             inputClass={`${errors?.password && `border border-red-500`}`}
           />
           {errors?.password && (
-            <p className='text-red-500'>{errors?.password?.message}</p>
+            <div className='flex items-center gap-2'>
+              <FaExclamationTriangle color='red' className='h-6 w-6 mb-1' />
+              <p className='text-red-500 text-[1.6rem]'>{errors?.password?.message}</p>
+            </div>
           )}
         </>
         {isSubmitting ? (

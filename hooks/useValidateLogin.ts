@@ -1,9 +1,8 @@
 'use client';
 import React from 'react';
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoginSchema, loginSchema } from '@/interface/auth';
+import { LoginSchema, validLoginSchema } from '@/interface/auth';
 
 const useValidateLogin = () => {
     const { register, handleSubmit, 
@@ -14,11 +13,11 @@ const useValidateLogin = () => {
         setError,
         getValues
     } = useForm<LoginSchema>({
-        resolver: zodResolver(loginSchema),
-        defaultValues: {
-            email: '',
-            password: ''
-        }
+        resolver: zodResolver(validLoginSchema),
+        // defaultValues: {
+        //     email: '',
+        //     password: ''
+        // }
     });
 
     const submitForm = async (data: LoginSchema) => {

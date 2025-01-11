@@ -2,6 +2,7 @@
 import React from 'react'
 import { Button, Card, CardContent, CardFooter, CardHeader, Socials } from '@/shared';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './CardWrapper.module.css'
 
 interface CardWrapperProps {
@@ -13,12 +14,14 @@ interface CardWrapperProps {
 }
 const CardWrapper = ({ children, headerLabel, backButtonLabel, backButtonHref, showSocial 
 }: CardWrapperProps) => {
+    const path = usePathname();
   return (
     <Card className={`${styles.card} w-[45rem] pt-[1rem] px-[1.6rem] pb-[2.5rem] rounded-3xl shadow-md`}>
         <CardHeader className='pt-0'>
-            <div className='w-[100%] flex flex-col items-center justify-center py-6 px-0'>
+            <div className='w-[100%] flex flex-col items-center justify-center pt-6 px-0'>
                 <h3 className='text-[3rem] font-semibold'>
-                    Login
+                    {path === '/login' && 'Login'}
+                    {path === '/register' && 'Sign Up'}
                 </h3>
                 <p className='text-3xl text-muted-foreground'>
                     {headerLabel}
