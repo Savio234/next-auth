@@ -5,7 +5,6 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginSchema, loginSchema } from '@/interface/auth';
 
-
 const useValidateLogin = () => {
     const { register, handleSubmit, 
         formState: { errors, isSubmitting }, 
@@ -21,11 +20,18 @@ const useValidateLogin = () => {
             password: ''
         }
     });
+
+    const submitForm = async (data: LoginSchema) => {
+        console.log(data);
+        await new Promise((resolve: any) => setTimeout(resolve, 2000))
+        reset();
+    }
   return {
     register,
     handleSubmit,
     errors,
-    isSubmitting
+    isSubmitting,
+    submitForm
   }
 }
 

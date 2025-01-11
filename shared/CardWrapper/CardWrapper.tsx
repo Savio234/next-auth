@@ -1,8 +1,8 @@
 'use client';
 import React from 'react'
 import { Button, Card, CardContent, CardFooter, CardHeader, Socials } from '@/shared';
-import styles from './CardWrapper.module.css'
 import Link from 'next/link';
+import styles from './CardWrapper.module.css'
 
 interface CardWrapperProps {
     children: React.ReactNode
