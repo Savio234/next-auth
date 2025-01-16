@@ -2,7 +2,7 @@ import React from 'react'
 import { yupResolver } from "@hookform/resolvers/yup";
 import toast from "react-hot-toast";
 import { signUpFormSchema } from '@/interface/auth';
-import { useForm } from 'react-hook-form';
+import { useFieldArray, useForm } from 'react-hook-form';
 
 type SignUpFormSchema = {
   email: string
@@ -12,9 +12,10 @@ type SignUpFormSchema = {
 }
 
 const useValidateSignUp = () => {
-  const { register, handleSubmit, 
+  const { register, handleSubmit, unregister,
     formState: { errors, isSubmitting }, 
-    reset, 
+    reset,
+    control,
     watch, 
     setValue,
     setError,
@@ -28,6 +29,13 @@ const useValidateSignUp = () => {
       confirmPassword: ''
     }
   });
+
+  // const { fields, append, remove } = useFieldArray({
+  //   control,
+  //   name: 'phoneNumber',
+  // })
+  // const addPhoneNumber = () => append('')
+  // const removePhoneNumber = (index: number) => remove(index)
 
   const submitForm = async (data: SignUpFormSchema) => {
     console.log(data);
